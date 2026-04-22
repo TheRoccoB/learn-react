@@ -21,20 +21,20 @@ export default async function ReferencePage({
 
   return (
     <div className="flex flex-col h-full">
-      <div className="border-b border-gray-200 px-6 py-4 flex items-center gap-4">
+      <div className="border-b border-zinc-800 px-6 py-4 flex items-center gap-4">
         <Link
           href={`/lessons/${slug}`}
-          className="text-sm text-blue-600 hover:underline"
+          className="text-sm text-blue-400 hover:underline"
         >
           &larr; Back to assignment
         </Link>
-        <h1 className="text-xl font-bold text-gray-900">
+        <h1 className="text-xl font-bold text-zinc-100">
           {lesson.title} — Reference Solution
         </h1>
       </div>
 
       <div className="flex-1 p-6">
-        <div className="border border-gray-200 rounded-lg p-6 bg-white">
+        <div className="border border-zinc-700 rounded-lg p-6 bg-[#13151a]">
           <ReferencePreview slug={slug} />
         </div>
       </div>

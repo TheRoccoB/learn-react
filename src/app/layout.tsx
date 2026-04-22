@@ -26,9 +26,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      style={{ colorScheme: 'dark' }}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="h-full flex">
+      <body className="h-full flex bg-[#0f1117] text-zinc-200">
         <Sidebar />
         <main className="flex-1 overflow-y-auto">{children}</main>
       </body>

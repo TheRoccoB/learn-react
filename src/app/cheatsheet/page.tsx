@@ -3,17 +3,17 @@ import { CodeComparison } from '@/components/cheatsheet/CodeComparison';
 export default function CheatSheetPage() {
   return (
     <div className="max-w-5xl mx-auto py-12 px-6">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">
+      <h1 className="text-3xl font-bold text-zinc-100 mb-2">
         Vue 3 → React Cheat Sheet
       </h1>
-      <p className="text-gray-500 mb-10">
+      <p className="text-zinc-400 mb-10">
         Every Vue concept you know, mapped to its React equivalent.
       </p>
 
       {/* 1. Template Syntax vs JSX */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Template Syntax vs JSX</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Template Syntax vs JSX</h2>
+        <p className="text-zinc-400 mb-4">
           Vue uses an HTML-based template syntax with directives. React uses JSX — JavaScript expressions that look like HTML but live inside your JS.
         </p>
         <CodeComparison
@@ -32,7 +32,7 @@ export default function CheatSheetPage() {
   );
 }`}
         />
-        <div className="text-sm text-gray-600 space-y-1">
+        <div className="text-sm text-zinc-400 space-y-1">
           <p><strong>class</strong> → <strong>className</strong> (class is reserved in JS)</p>
           <p><strong>for</strong> → <strong>htmlFor</strong> (for is reserved in JS)</p>
           <p><strong>{'{{ }}'}</strong> → <strong>{'{ }'}</strong> (single curlies in JSX)</p>
@@ -42,8 +42,8 @@ export default function CheatSheetPage() {
 
       {/* 2. SFCs vs Function Components */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">SFCs vs Function Components</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">SFCs vs Function Components</h2>
+        <p className="text-zinc-400 mb-4">
           Vue organizes code in Single File Components with template/script/style blocks. React components are plain functions.
         </p>
         <CodeComparison
@@ -77,15 +77,15 @@ export default function MyComponent({ name }: Props) {
 // Or with Tailwind:
 // <div className="text-blue-500">`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           React has no built-in scoped styles. Common solutions: Tailwind CSS, CSS Modules, or styled-components.
         </p>
       </section>
 
       {/* 3. ref/reactive vs useState */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">ref / reactive vs useState</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">ref / reactive vs useState</h2>
+        <p className="text-zinc-400 mb-4">
           Vue&apos;s reactivity system lets you mutate state directly. React requires immutable updates via setter functions.
         </p>
         <CodeComparison
@@ -110,15 +110,15 @@ setCount(c => c + 1);  // never mutate!
 const [user, setUser] = useState({ name: 'Ada', age: 30 });
 setUser(prev => ({ ...prev, name: 'Bob' }));  // spread + override`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           <strong>Key insight:</strong> In Vue, <code>count.value++</code> works. In React, you must always call the setter — <code>setCount(count + 1)</code>. Direct mutation does nothing.
         </p>
       </section>
 
       {/* 4. computed vs useMemo */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">computed vs useMemo</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">computed vs useMemo</h2>
+        <p className="text-zinc-400 mb-4">
           Both cache derived values. Vue auto-tracks dependencies; React requires you to list them.
         </p>
         <CodeComparison
@@ -152,8 +152,8 @@ const filtered = useMemo(
 
       {/* 5. watch/watchEffect vs useEffect */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">watch / watchEffect vs useEffect</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">watch / watchEffect vs useEffect</h2>
+        <p className="text-zinc-400 mb-4">
           Vue has separate APIs for watching state. React unifies everything into <code>useEffect</code>.
         </p>
         <CodeComparison
@@ -186,7 +186,7 @@ useEffect(() => {
   console.log('query is:', query);
 });  // no deps array = every render`}
         />
-        <div className="text-sm text-gray-600 space-y-1">
+        <div className="text-sm text-zinc-400 space-y-1">
           <p><strong>watch(source, cb)</strong> → <strong>useEffect(cb, [source])</strong></p>
           <p><strong>watchEffect(cb)</strong> → <strong>useEffect(cb)</strong> (but avoid — runs every render)</p>
           <p><strong>Note:</strong> useEffect has no <code>oldValue</code> parameter. Use a ref to track previous values if needed.</p>
@@ -195,8 +195,8 @@ useEffect(() => {
 
       {/* 6. Lifecycle hooks */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Lifecycle Hooks</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Lifecycle Hooks</h2>
+        <p className="text-zinc-400 mb-4">
           Vue has dedicated lifecycle hooks. React uses <code>useEffect</code> for all of them.
         </p>
         <CodeComparison
@@ -237,8 +237,8 @@ useEffect(() => {
 
       {/* 7. v-model vs Controlled Inputs */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">v-model vs Controlled Inputs</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">v-model vs Controlled Inputs</h2>
+        <p className="text-zinc-400 mb-4">
           Vue&apos;s <code>v-model</code> is two-way binding sugar. React uses controlled components — you wire value + onChange yourself.
         </p>
         <CodeComparison
@@ -267,15 +267,15 @@ function Form() {
   );
 }`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           React has no built-in two-way binding. You always set <code>value</code> and handle <code>onChange</code>. This is more explicit but more verbose.
         </p>
       </section>
 
       {/* 8. v-if/v-show vs Conditional Rendering */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">v-if / v-show vs Conditional Rendering</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">v-if / v-show vs Conditional Rendering</h2>
+        <p className="text-zinc-400 mb-4">
           Vue has template directives. React uses plain JavaScript expressions.
         </p>
         <CodeComparison
@@ -315,8 +315,8 @@ function Form() {
 
       {/* 9. v-for vs .map() */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">v-for vs .map()</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">v-for vs .map()</h2>
+        <p className="text-zinc-400 mb-4">
           Vue loops in the template. React maps arrays in JSX.
         </p>
         <CodeComparison
@@ -342,15 +342,15 @@ function Form() {
   );
 }`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           Both require a <code>key</code> prop for efficient re-rendering. In React, <code>key</code> goes on the JSX element, not a directive.
         </p>
       </section>
 
       {/* 10. Props + emit vs Props + callbacks */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Props + emit vs Props + Callbacks</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Props + emit vs Props + Callbacks</h2>
+        <p className="text-zinc-400 mb-4">
           Vue uses <code>emit</code> for child → parent communication. React passes callback functions as props.
         </p>
         <CodeComparison
@@ -388,15 +388,15 @@ function Parent() {
   return <Child onUpdate={handleUpdate} />;
 }`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           React convention: callback props start with <code>on</code> (e.g., <code>onUpdate</code>, <code>onChange</code>, <code>onSubmit</code>).
         </p>
       </section>
 
       {/* 11. Slots vs children */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Slots vs children / Render Props</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Slots vs children / Render Props</h2>
+        <p className="text-zinc-400 mb-4">
           Vue uses named slots. React uses <code>children</code> and render props.
         </p>
         <CodeComparison
@@ -439,15 +439,15 @@ function Card({ header, children }: Props) {
   <p>Body content</p>
 </Card>`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           <code>children</code> is like the default slot. Named slots become regular props that accept <code>ReactNode</code>.
         </p>
       </section>
 
       {/* 12. provide/inject vs useContext */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">provide / inject vs useContext</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">provide / inject vs useContext</h2>
+        <p className="text-zinc-400 mb-4">
           Both solve the same problem: passing data deep without prop drilling.
         </p>
         <CodeComparison
@@ -492,8 +492,8 @@ function DeepChild() {
 
       {/* 13. Pinia vs State Management */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Pinia vs State Management</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Pinia vs State Management</h2>
+        <p className="text-zinc-400 mb-4">
           Vue has Pinia as the standard store. React has many options — Zustand is the most Vue-like.
         </p>
         <CodeComparison
@@ -525,15 +525,15 @@ function Counter() {
   return <button onClick={increment}>{count}</button>;
 }`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           Other options: Redux Toolkit (more boilerplate, huge ecosystem), Jotai (atomic, like Vue refs), or just React Context + useReducer for simple cases.
         </p>
       </section>
 
       {/* 14. Nuxt pages vs Next.js App Router */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Nuxt Pages vs Next.js App Router</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Nuxt Pages vs Next.js App Router</h2>
+        <p className="text-zinc-400 mb-4">
           Both use file-system routing. The conventions differ slightly.
         </p>
         <CodeComparison
@@ -569,7 +569,7 @@ export default async function UserPage({
   const { id } = await params;
 }`}
         />
-        <div className="text-sm text-gray-600 space-y-1">
+        <div className="text-sm text-zinc-400 space-y-1">
           <p><strong>Nuxt:</strong> each file = a route. <strong>Next.js:</strong> each folder with <code>page.tsx</code> = a route.</p>
           <p><strong>Nuxt:</strong> <code>[id].vue</code> <strong>Next.js:</strong> <code>[id]/page.tsx</code></p>
           <p><strong>Nuxt:</strong> <code>layouts/default.vue</code> <strong>Next.js:</strong> <code>layout.tsx</code> in the same or parent folder</p>
@@ -578,8 +578,8 @@ export default async function UserPage({
 
       {/* 15. Nuxt middleware vs Next.js middleware */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Nuxt Middleware vs Next.js Middleware</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Nuxt Middleware vs Next.js Middleware</h2>
+        <p className="text-zinc-400 mb-4">
           Both intercept requests. Nuxt has route middleware; Next.js has edge middleware.
         </p>
         <CodeComparison
@@ -614,15 +614,15 @@ export const config = {
   matcher: '/dashboard/:path*',
 };`}
         />
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-zinc-400">
           Next.js middleware runs at the edge (before the server). It&apos;s a single file that uses URL matchers, unlike Nuxt&apos;s per-page middleware assignment.
         </p>
       </section>
 
       {/* 16. Composables vs Custom Hooks */}
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-1">Composables vs Custom Hooks</h2>
-        <p className="text-gray-600 mb-4">
+        <h2 className="text-2xl font-semibold text-zinc-100 mb-1">Composables vs Custom Hooks</h2>
+        <p className="text-zinc-400 mb-4">
           Same concept, different names. Both extract reusable stateful logic into functions.
         </p>
         <CodeComparison
@@ -667,14 +667,14 @@ export function useMouse() {
 
 // Usage: const { x, y } = useMouse();`}
         />
-        <div className="text-sm text-gray-600 space-y-1">
+        <div className="text-sm text-zinc-400 space-y-1">
           <p><strong>Convention:</strong> Both start with <code>use</code>.</p>
           <p><strong>Vue:</strong> composables in <code>composables/</code>. <strong>React:</strong> hooks in <code>hooks/</code>.</p>
           <p><strong>Key rule:</strong> React hooks must be called at the top level — never inside conditions, loops, or nested functions. Vue composables have the same constraint inside <code>setup()</code>.</p>
         </div>
       </section>
 
-      <div className="border-t border-gray-200 pt-6 text-center text-gray-400 text-sm">
+      <div className="border-t border-zinc-800 pt-6 text-center text-zinc-500 text-sm">
         Ready to practice? Head to the lessons in the sidebar.
       </div>
     </div>
