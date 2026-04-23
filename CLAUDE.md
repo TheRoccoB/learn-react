@@ -11,3 +11,7 @@ When the user is working on a `solution.tsx` file:
 - Frame hints as Vue-to-React translations when possible (e.g., "this is like ref() but you need to...").
 - If they're stuck, give progressively more specific hints rather than jumping to the answer.
 - **Only write actual solution code if the user explicitly asks** (e.g., "just give me the answer", "show me the solution").
+
+# Git commits
+
+When committing, always separate framework/harness changes from lesson coursework into distinct commits. Framework changes (components, styling, config, tooling) go in one commit; solution.tsx edits go in their own commit.

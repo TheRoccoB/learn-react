@@ -28,3 +28,8 @@ export function getLessonReadme(slug: string): string {
   const readmePath = path.join(LESSONS_DIR, slug, 'README.md');
   return fs.readFileSync(readmePath, 'utf-8');
 }
+
+export function getLessonReferenceSource(slug: string): string {
+  const refPath = path.join(LESSONS_DIR, slug, 'reference.tsx');
+  return fs.readFileSync(refPath, 'utf-8');
+}
