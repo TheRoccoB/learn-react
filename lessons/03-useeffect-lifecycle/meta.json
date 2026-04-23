@@ -1,1 +1,1 @@
-{ "title": "useEffect & Lifecycle", "order": 3 }
+{ "title": "useEffect & Lifecycle", "order": 3, "sampleProps": { "url": "https://jsonplaceholder.typicode.com/users" } }

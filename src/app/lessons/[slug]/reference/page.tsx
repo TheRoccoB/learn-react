@@ -35,7 +35,7 @@ export default async function ReferencePage({
 
       <div className="flex-1 p-6">
         <div className="border border-zinc-700 rounded-lg p-6 bg-[#13151a]">
-          <ReferencePreview slug={slug} />
+          <ReferencePreview slug={slug} sampleProps={lesson.sampleProps} />
         </div>
       </div>
     </div>

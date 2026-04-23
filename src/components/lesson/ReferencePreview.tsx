@@ -2,16 +2,21 @@
 
 import dynamic from 'next/dynamic';
 
-export function ReferencePreview({ slug }: { slug: string }) {
+interface Props {
+  slug: string;
+  sampleProps?: Record<string, unknown>;
+}
+
+export function ReferencePreview({ slug, sampleProps = {} }: Props) {
   const Reference = dynamic(
     () => import(`../../../lessons/${slug}/reference`),
     {
       loading: () => (
-        <p className="text-gray-400 italic">Loading reference...</p>
+        <p className="text-zinc-500 italic">Loading reference...</p>
       ),
       ssr: false,
     }
   );
 
-  return <Reference />;
+  return <Reference {...sampleProps} />;
 }

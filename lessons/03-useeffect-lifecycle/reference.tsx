@@ -30,7 +30,7 @@ export default function UserList({ url }: Props) {
 
   if (loading) {
     return (
-      <div data-testid="loading" className="text-gray-500 italic">
+      <div data-testid="loading" className="text-zinc-400 italic">
         Loading...
       </div>
     );
@@ -39,7 +39,7 @@ export default function UserList({ url }: Props) {
   return (
     <ul data-testid="user-list" className="space-y-1">
       {users.map((user) => (
-        <li key={user} className="text-gray-800">
+        <li key={user} className="text-zinc-200">
           {user}
         </li>
       ))}

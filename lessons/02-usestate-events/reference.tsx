@@ -7,19 +7,19 @@ export default function Counter() {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <p data-testid="count-display" className="text-4xl font-bold text-gray-900">
+      <p data-testid="count-display" className="text-4xl font-bold text-zinc-100">
         {count}
       </p>
       <div className="flex gap-2">
         <button
           onClick={() => setCount(count - 1)}
-          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 font-medium"
+          className="px-4 py-2 bg-zinc-700 text-zinc-200 rounded hover:bg-zinc-600 font-medium"
         >
           -1
         </button>
         <button
           onClick={() => setCount(0)}
-          className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 font-medium"
+          className="px-4 py-2 bg-zinc-700 text-zinc-200 rounded hover:bg-zinc-600 font-medium"
         >
           Reset
         </button>

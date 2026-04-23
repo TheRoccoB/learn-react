@@ -5,6 +5,7 @@ export interface LessonMeta {
   title: string;
   order: number;
   slug: string;
+  sampleProps?: Record<string, unknown>;
 }
 
 const LESSONS_DIR = path.join(process.cwd(), 'lessons');

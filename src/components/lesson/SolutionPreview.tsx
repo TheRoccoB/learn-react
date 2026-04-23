@@ -3,12 +3,17 @@
 import dynamic from 'next/dynamic';
 import { ErrorBoundary } from './ErrorBoundary';
 
-export function SolutionPreview({ slug }: { slug: string }) {
+interface Props {
+  slug: string;
+  sampleProps?: Record<string, unknown>;
+}
+
+export function SolutionPreview({ slug, sampleProps = {} }: Props) {
   const Solution = dynamic(
     () => import(`../../../lessons/${slug}/solution`),
     {
       loading: () => (
-        <p className="text-gray-400 italic">Loading your solution...</p>
+        <p className="text-zinc-500 italic">Loading your solution...</p>
       ),
       ssr: false,
     }
@@ -17,12 +22,12 @@ export function SolutionPreview({ slug }: { slug: string }) {
   return (
     <ErrorBoundary
       fallback={
-        <p className="text-red-500">
+        <p className="text-red-400">
           Your component threw an error. Check the console.
         </p>
       }
     >
-      <Solution />
+      <Solution {...sampleProps} />
     </ErrorBoundary>
   );
 }

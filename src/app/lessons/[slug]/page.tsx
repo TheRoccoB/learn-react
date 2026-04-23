@@ -32,7 +32,7 @@ export default async function LessonPage({
       prevLesson={prev}
       nextLesson={next}
     >
-      <SolutionPreview slug={slug} />
+      <SolutionPreview slug={slug} sampleProps={lesson.sampleProps} />
     </LessonShell>
   );
 }
