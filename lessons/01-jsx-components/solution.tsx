@@ -13,7 +13,15 @@
 //    - A <p> with data-testid="profile-role" showing the role
 //
 // Remember: In React it's className, not class!
-
-export default function ProfileCard() {
-  return <div>TODO: Build your ProfileCard here</div>;
+interface Props {
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
+export default function ProfileCard({name, role, avatarUrl} : Props) {
+  return <div data-testid="profile-card" className="border max-w-sm border-zinc-100 p-6 ">
+    <img src={avatarUrl} alt={name} className="rounded-full"/>
+    <h2 data-testid="profile-name" className="text-xl">{name}</h2>
+    <p data-testid="profile-role">{role}</p>
+  </div>;
 }
